@@ -4,17 +4,22 @@
     
     include_once '../config/db_connection.php';
     include_once '../class/members.php';
+
     $db_connection = new Database();
     $db = $db_connection->getConnection();
+
     $membro_linhas = new Membro($db);
     $stmt = $membro_linhas->getMembers();
     $membro_linhaCount = $stmt->rowCount();
+
     echo json_encode($membro_linhaCount);
+
     if($membro_linhaCount > 0){
         
         $membroArray = array();
         $membroArray["body"] = array();
         $membroArray["member_rowCount"] = $membro_linhaCount;
+
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             extract($row);
             $e = array(

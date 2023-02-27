@@ -12,9 +12,7 @@
     $db = $db_connection->getConnection();
     
     $membro_linha = new Membro($db);
-    
     $data = json_decode(file_get_contents("php://input"));
-    
     $membro_linha->id = $data->id;
     
     // valores membro
@@ -25,6 +23,7 @@
     $membro_linha->data_entrada = date('Y-m-d H:i:s');
     
     if($membro_linha->updateMember()){
+        
         echo json_encode("Os dados foram atualizados com sucesso.");
     } else{
         echo json_encode("Não foi possível atualizar os dados.");
