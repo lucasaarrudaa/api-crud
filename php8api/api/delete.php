@@ -12,9 +12,7 @@
     $db = $db_connection->getConnection();
     
     $membro_linha = new Membro($db);
-    
     $dado = json_decode(file_get_contents("php://input"));
-    
     $membro_linha->id = $dado->id;
     
     if($membro_linha->deleteMember()){
