@@ -1,5 +1,3 @@
-# API-CRUD-PHP
- 
 Status: Funcionando.
 
 Foram utilizados: XAMPP 8.2.0 ; PHP 8.2.0; MYSQL 8.0.32.
